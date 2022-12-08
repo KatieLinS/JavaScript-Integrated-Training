@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Poppins:wght@100;400;500;600;700&family=Roboto:wght@100;400;500;600;700&family=Amatic+SC:wght@400;700&display=swap');
+
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background:linear-gradient(0.3turn, #172238 20%, rgba(256, 256, 256, 0)) 70%, url("../images/background.jpeg");
+  color: #345B63;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1em;
+  overflow: auto;
+  height: 100%;
+}
+
+h1, h2, h3 {
+  font-family: 'Amatic SC';
+  line-height: 1.5em;
+}
+
+h1 {
+  font-size: 40px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 32px;
+  color: #345B63;
+  font-weight: 700;
+}
+
+/* Setting container for the website */
+.container {
+  width: 960px;
+  margin: 20px auto;
+        display: flex;
+        flex-wrap: wrap;
+}
+
+@media (max-width: 960px) {
+  /* For a screen < 960px, this CSS will be read */
+  .container {
+    width: 700px;
+  }
+}
+@media (max-width: 720px) {
+  /* For a screen < 720px, this CSS will be read */
+  .container {
+    width: 500px;
+  }
+}
+@media (max-width: 540px) {
+  /* For a screen < 540px, this CSS will be read */
+  .container {
+    width: 400px;
+  }
+}
+
+.card-white {
+  background-color: white;
+  padding: 16px;
+  box-shadow: 8px 8px 24px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  text-align: center;
+  display: inline-block;
+  margin: 10px;
+}
+
+.flex-item {
+  flex: 1 1 400px;
+}
+
+.card-white > a {
+  color: #FFE194;
+  font-size: 48px;
+}
+
+.card-white > a:hover {
+  color: #ffc041;
+}
+
+.btn-yellow {
+  background-color: #ffc041;
+  padding: 16px;
+  font-family: 'Amatic SC';
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 4px;
+  margin: 10px;
+}
+
+.btn-yellow:hover {
+  background-color: #FFE194;
+}
+
+.img-circle {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.list-inline {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.list-inline > li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.list-inline > li > a {
+  color: #FFE194;
+  font-size: 48px;
+}
+
+.list-inline > li > a:hover {
+  color: #ffc041;
+}
+
+.card-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+footer{
+  grid-column: span 2;
+}
+
+.sky_body {
+  position:fixed;
+  height: 100vh;
+  width: 50vw;
+  left: -20vw;
+  overflow: hidden;
+  opacity: 0.7;
+  display: -webkit-box;
+  display: flex;
+}
+
+
+/* Here using -webkit, we make angle
+of 45 degree of falling star */
+.sky {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+}
+
+/* Here we are making roundabout balls */
+.star {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 2px;
+  border-radius: 885px;
+  background: linear-gradient(-45deg,
+    #eef0f5, rgba(0, 0, 255, 0));
+
+  -webkit-filter: drop-shadow(0 0 6px #eef1f8);
+  filter: drop-shadow(0 0 6px #d7dff0);
+  -webkit-animation: tail 3000ms ease-in-out infinite,
+    shooting 3000ms ease-in-out infinite;
+  animation: tail 3000ms ease-in-out infinite,
+    shooting 3000ms ease-in-out infinite;
+}
+
+/* Here we add before and after effect to star */
+.star::before,
+.star::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 1px);
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    -45deg,
+    rgba(0, 0, 255, 0),
+    #eaeef8,
+    rgba(0, 0, 255, 0)
+);
+  -webkit-transform: translateX(50%) rotateZ(45deg);
+  transform: translateX(50%) rotateZ(45deg);
+  border-radius: 100%;
+  -webkit-animation: shining 3000ms ease-in-out infinite;
+  animation: shining 3000ms ease-in-out infinite;
+}
+.star::after {
+  -webkit-transform: translateX(50%) rotateZ(-45deg);
+  transform: translateX(50%) rotateZ(-45deg);
+}
+
+/* Here we are adding location of each
+nth-child, animations, delays, and
+before and after effects to each
+and every balls(stars) */
+.star:nth-child(1) {
+  top: calc(50% - -119px);
+  left: calc(50% - 43px);
+  -webkit-animation-delay: 4000ms;
+  animation-delay: 4000ms;
+}
+.star:nth-child(1)::before,
+.star:nth-child(1)::after {
+  -webkit-animation-delay: 4000ms;
+  animation-delay: 4000ms;
+}
+.star:nth-child(2) {
+  top: calc(50% - -203px);
+  left: calc(50% - 37px);
+  -webkit-animation-delay: 5000ms;
+  animation-delay: 5000ms;
+}
+.star:nth-child(2)::before,
+.star:nth-child(2)::after {
+  -webkit-animation-delay: 5000ms;
+  animation-delay: 5000ms;
+}
+.star:nth-child(3) {
+  top: calc(50% - -40px);
+  left: calc(50% - 222px);
+  -webkit-animation-delay: 5500ms;
+  animation-delay: 5500ms;
+}
+.star:nth-child(3)::before,
+.star:nth-child(3)::after {
+  -webkit-animation-delay: 5500ms;
+  animation-delay: 5500ms;
+}
+.star:nth-child(4) {
+  top: calc(50% - -20px);
+  left: calc(50% - 113px);
+  -webkit-animation-delay: 7000ms;
+  animation-delay: 7000ms;
+}
+.star:nth-child(4)::before,
+.star:nth-child(4)::after {
+  -webkit-animation-delay: 7000ms;
+  animation-delay: 7000ms;
+}
+.star:nth-child(5) {
+  top: calc(50% - 146px);
+  left: calc(50% - 112px);
+  -webkit-animation-delay: 2000ms;
+  animation-delay: 2000ms;
+}
+.star:nth-child(5)::before,
+.star:nth-child(5)::after {
+  -webkit-animation-delay: 2000ms;
+  animation-delay: 2000ms;
+}
+.star:nth-child(6) {
+  top: calc(50% - -305px);
+  left: calc(50% - 160px);
+  -webkit-animation-delay: 2500ms;
+  animation-delay: 2500ms;
+}
+.star:nth-child(6)::before,
+.star:nth-child(6)::after {
+  -webkit-animation-delay: 2500ms;
+  animation-delay: 2500ms;
+}
+.star:nth-child(7) {
+  top: calc(50% - 52px);
+  left: calc(50% - 72px);
+  -webkit-animation-delay: 6000ms;
+  animation-delay: 6000ms;
+}
+.star:nth-child(7)::before,
+.star:nth-child(7)::after {
+  -webkit-animation-delay: 6000ms;
+  animation-delay: 6000ms;
+}
+
+/* This code will help to generate
+effect in tail of star */
+@keyframes tail {
+0% {
+	width: 0;
+}
+30% {
+	width: 100px;
+}
+100% {
+	width: 0;
+}
+}
+
+/* This code will generate shining
+effect in head of star */
+@keyframes shining {
+0% {
+	width: 0;
+}
+50% {
+	width: 30px;
+}
+100% {
+	width: 0;
+}
+}
+
+/* Here we are adding webkit-animation
+to head of star for shining */
+@-webkit-keyframes shining {
+0% {
+	width: 0;
+}
+50% {
+	width: 30px;
+}
+100% {
+	width: 0;
+}
+}
+
+/* Here we are adding webkit-animation
+to tail of star */
+@-webkit-keyframes tail {
+0% {
+	width: 0;
+}
+30% {
+	width: 100px;
+}
+100% {
+	width: 0;
+}
+}
+
+/* Here we are adding webkit-animation
+for shooting effect */
+@-webkit-keyframes shooting {
+0% {
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
+}
+100% {
+	-webkit-transform: translateX(270px);
+	transform: translateX(270px);
+}
+}
+
+/* Here we make shooting effect */
+@keyframes shooting {
+0% {
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
+}
+100% {
+	-webkit-transform: translateX(270px);
+	transform: translateX(270px);
+}
+}
